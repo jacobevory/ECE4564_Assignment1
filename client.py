@@ -8,7 +8,7 @@ from tweepy.streaming import StreamListener
 import json
 from clientKeys.py import ckey, csec, atok, asec,  track, hashstr
 
-host = '192.168.1.9'
+host = '192.168.1.1'
 port = 50000
 size = 1024
 s = None
