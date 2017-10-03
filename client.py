@@ -6,8 +6,7 @@ from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import json
-from clientKeys.py import ckey, csec, atok, asec,  track, hashstr
-
+from clientKeys.py import ckey, csec, atok, asec
 host = '192.168.1.1'
 port = 50000
 size = 1024
@@ -21,14 +20,16 @@ if(argv[1] == '-p') port = argv[2]
 if(argv[3] == '-p') port = argv[4]
 if(argv[5] == '-p') port = argv[6]
 if(argv[7] == '-p') port = argv[8]
-if(argv[1] == '-b') backlog = argv[2]
-if(argv[3] == '-b') backlog = argv[4]
-if(argv[5] == '-b') backlog = argv[6]
-if(argv[7] == '-b') backlog = argv[8]
+if(argv[1] == '-t') hashstr = argv[2]
+if(argv[3] == '-t') hashstr = argv[4]
+if(argv[5] == '-t') hashstr = argv[6]
+if(argv[7] == '-t') hashstr = argv[8]
 if(argv[1] == '-z') size = argv[2]
 if(argv[3] == '-z') size = argv[4]
 if(argv[5] == '-z') size = argv[6]
 if(argv[7] == '-z') size = argv[8]
+
+track = '[' + haststr + ']'
 
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
