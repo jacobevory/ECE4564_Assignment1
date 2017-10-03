@@ -3,6 +3,7 @@
 import socket
 import sys
 import wolframalpha
+from serverKeys.py import wolfappid
 
 #default port, backlog, and size assignment
 host = ''
@@ -21,8 +22,7 @@ if(argv[1] == '-z') size = argv[2]
 if(argv[3] == '-z') size = argv[4]
 if(argv[5] == '-z') size = argv[6]
 
-appid = 'P9WYYV-EH3LA7A65X'
-wolfclient = wolframalpha.Client(appid)
+wolfclient = wolframalpha.Client(wolfappid)
 
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
