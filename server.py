@@ -12,15 +12,15 @@ backlog = 5
 size = 1024
 s = None
 
-if(argv[1] == '-p') port = argv[2]
-if(argv[3] == '-p') port = argv[4]
-if(argv[5] == '-p') port = argv[6]
-if(argv[1] == '-b') backlog = argv[2]
-if(argv[3] == '-b') backlog = argv[4]
-if(argv[5] == '-b') backlog = argv[6]
-if(argv[1] == '-z') size = argv[2]
-if(argv[3] == '-z') size = argv[4]
-if(argv[5] == '-z') size = argv[6]
+if(sys.argv[1] == '-p') port = sys.argv[2]
+if(sys.argv[3] == '-p') port = sys.argv[4]
+if(sys.argv[5] == '-p') port = sys.argv[6]
+if(sys.argv[1] == '-b') backlog = sys.argv[2]
+if(sys.argv[3] == '-b') backlog = sys.argv[4]
+if(sys.argv[5] == '-b') backlog = sys.argv[6]
+if(sys.argv[1] == '-z') size = sys.argv[2]
+if(sys.argv[3] == '-z') size = sys.argv[4]
+if(sys.argv[5] == '-z') size = sys.argv[6]
 
 wolfclient = wolframalpha.Client(wolfappid)
 
