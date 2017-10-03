@@ -6,19 +6,12 @@ from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import json
+from clientKeys.py import ckey, csec, atok, asec,  track, hashstr
 
 host = '192.168.1.9'
 port = 50000
 size = 1024
 s = None
-
-ckey = '81bWC84J6xGLmjDyPdrChhz02'
-csec = 'crs5WnkfMokqo5vjG7ceWuAqIqEuzgBBxCzTKczNmtEdCGcI5Y'
-atok = '913827757070733312-qHrxDoaavKU8s9Ww2L2PG6XTE9JDvYg'
-asec = 'JM1HOhEpvvz5In4UtXa7HxumMfFc348q6wZJzPFwS3Jp0'
-
-track = ['#ECE4564T26']
-hashstr = '#ECE4564T26'
 
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
