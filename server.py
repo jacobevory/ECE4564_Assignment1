@@ -12,13 +12,13 @@ backlog = 5
 size = 1024
 s = None
 
-if(str(sys.argv[1]) == '-p') port = str(sys.argv[2])
+if(sys.argv[1] == [-p]) port = sys.argv[2]
 if(str(sys.argv[3]) == '-p') port = str(sys.argv[4])
 if(str(sys.argv[5]) == '-p') port = str(sys.argv[6])
-if(str(sys.argv[1]) == '-b') backlog = str(sys.argv[2])
+if(sys.argv[1]) == '-b' backlog = sys.argv[2]
 if(str(sys.argv[3]) == '-b') backlog = str(sys.argv[4])
 if(str(sys.argv[5]) == '-b') backlog = str(sys.argv[6])
-if(str(sys.argv[1]) == '-z') size = str(sys.argv[2])
+if(sys.argv[1]) == '-z' size = sys.argv[2]
 if(str(sys.argv[3]) == '-z') size = str(sys.argv[4])
 if(str(sys.argv[5]) == '-z') size = str(sys.argv[6])
 
