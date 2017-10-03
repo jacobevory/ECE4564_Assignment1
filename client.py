@@ -13,6 +13,23 @@ port = 50000
 size = 1024
 s = None
 
+if(argv[1] == '-s') host = argv[2]
+if(argv[3] == '-s') host = argv[4]
+if(argv[5] == '-s') host = argv[6]
+if(argv[7] == '-s') host = argv[8]
+if(argv[1] == '-p') port = argv[2]
+if(argv[3] == '-p') port = argv[4]
+if(argv[5] == '-p') port = argv[6]
+if(argv[7] == '-p') port = argv[8]
+if(argv[1] == '-b') backlog = argv[2]
+if(argv[3] == '-b') backlog = argv[4]
+if(argv[5] == '-b') backlog = argv[6]
+if(argv[7] == '-b') backlog = argv[8]
+if(argv[1] == '-z') size = argv[2]
+if(argv[3] == '-z') size = argv[4]
+if(argv[5] == '-z') size = argv[6]
+if(argv[7] == '-z') size = argv[8]
+
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
