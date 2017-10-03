@@ -4,11 +4,22 @@ import socket
 import sys
 import wolframalpha
 
+#default port, backlog, and size assignment
 host = ''
 port = 50000
 backlog = 5
 size = 1024
 s = None
+
+if(argv[1] == '-p') port = argv[2]
+if(argv[3] == '-p') port = argv[4]
+if(argv[5] == '-p') port = argv[6]
+if(argv[1] == '-b') backlog = argv[2]
+if(argv[3] == '-b') backlog = argv[4]
+if(argv[5] == '-b') backlog = argv[6]
+if(argv[1] == '-z') size = argv[2]
+if(argv[3] == '-z') size = argv[4]
+if(argv[5] == '-z') size = argv[6]
 
 appid = 'P9WYYV-EH3LA7A65X'
 wolfclient = wolframalpha.Client(appid)
