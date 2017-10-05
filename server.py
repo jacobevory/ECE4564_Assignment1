@@ -3,7 +3,7 @@
 import socket
 import sys
 import wolframalpha
-from serverKeys.py import wolfappid
+from serverKeys import wolfappid
 
 #default port, backlog, and size assignment
 host = ''
@@ -12,15 +12,14 @@ backlog = 5
 size = 1024
 s = None
 
-if(sys.argv[1] == '-p'):    port = sys.argv[2]
-if(sys.argv[3] == '-p'):    port = sys.argv[4]
-if(sys.argv[5] == '-p'):    port = sys.argv[6]
-if(sys.argv[1] == '-b'): backlog = sys.argv[2]
-if(sys.argv[3] == '-b'): backlog = sys.argv[4]
-if(sys.argv[5] == '-b'): backlog = sys.argv[6]
-if(sys.argv[1] == '-z'):    size = sys.argv[2]
-if(sys.argv[3] == '-z'):    size = sys.argv[4]
-if(sys.argv[5] == '-z'):    size = sys.argv[6]
+if(sys.argv[1] == '-p'):    port = int(sys.argv[2])
+if(sys.argv[3] == '-p'):    port = int(sys.argv[4])
+if(sys.argv[5] == '-p'):    port = int(sys.argv[6])
+if(sys.argv[1] == '-b'): backlog = int(sys.argv[2])
+if(sys.argv[3] == '-b'): backlog = int(sys.argv[4])
+if(sys.argv[5] == '-b'): backlog = int(sys.argv[6])
+if(sys.argv[3] == '-z'):    size = int(sys.argv[4])
+if(sys.argv[5] == '-z'):    size = int(sys.argv[6])
 
 wolfclient = wolframalpha.Client(wolfappid)
 
