@@ -12,22 +12,23 @@ port = 50000
 size = 1024
 s = None
 
-if(argv[1] == '-s'): host = argv[2]
-if(argv[3] == '-s'): host = argv[4]
-if(argv[5] == '-s'): host = argv[6]
-if(argv[7] == '-s'): host = argv[8]
-if(argv[1] == '-p'): port = argv[2]
-if(argv[3] == '-p'): port = argv[4]
-if(argv[5] == '-p'): port = argv[6]
-if(argv[7] == '-p'): port = argv[8]
-if(argv[1] == '-t'): hashstr = argv[2]
-if(argv[3] == '-t'): hashstr = argv[4]
-if(argv[5] == '-t'): hashstr = argv[6]
-if(argv[7] == '-t'): hashstr = argv[8]
-if(argv[1] == '-z'): size = argv[2]
-if(argv[3] == '-z'): size = argv[4]
-if(argv[5] == '-z'): size = argv[6]
-if(argv[7] == '-z'): size = argv[8]
+if len(sys.argv):
+    if(sys.argv[1] == '-s'):    host = sys.argv[2]
+    if(sys.argv[3] == '-s'):    host = sys.argv[4]
+    if(sys.argv[5] == '-s'):    host = sys.argv[6]
+    if(sys.argv[7] == '-s'):    host = sys.argv[8]
+    if(sys.argv[1] == '-p'):    port = sys.argv[2]
+    if(sys.argv[3] == '-p'):    port = sys.argv[4]
+    if(sys.argv[5] == '-p'):    port = sys.argv[6]
+    if(sys.argv[7] == '-p'):    port = sys.argv[8]
+    if(sys.argv[1] == '-t'): hashstr = sys.argv[2]
+    if(sys.argv[3] == '-t'): hashstr = sys.argv[4]
+    if(sys.argv[5] == '-t'): hashstr = sys.argv[6]
+    if(sys.argv[7] == '-t'): hashstr = sys.argv[8]
+    if(sys.argv[1] == '-z'):    size = sys.argv[2]
+    if(sys.argv[3] == '-z'):    size = sys.argv[4]
+    if(sys.argv[5] == '-z'):    size = sys.argv[6]
+    if(sys.argv[7] == '-z'):    size = sys.argv[8]
 
 track = '[' + haststr + ']'
 
