@@ -7,3 +7,6 @@ $sudo pip3 install gTTS
 $sudo pip3 install wolframalpha
 
 $sudo pip3 install tweepy
+
+#TODO:
+  filter incoming twiter stream
