@@ -50,6 +50,8 @@ while 1:
         ans = next(res.results).text
         print('[Checkpoint 11] Received answer from Wolframalpha:' + ans)
         #TODO make RPi speak here
+	phrase = 'say ' + ans
+	os.system(phrase)
         print('[Checkpoint 12] Speaking answer parsed for only Alphnumeric and Space characters:')
 
         print('[Checkpoint 13] Sending answer:' + ans)

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import socket
+import os
 import sys
 from tweepy import Stream
 from tweepy import OAuthHandler
@@ -9,6 +10,7 @@ import json
 from clientKeys import ckey, csec, atok, asec
 host = '192.168.1.1'
 port = 50000
+hashstr = '#defaultTestECE4564'
 size = 1024
 s = None
 
@@ -30,7 +32,7 @@ if len(sys.argv) > 1:
     if(sys.argv[5] == '-z'):    size = sys.argv[6]
     if(sys.argv[7] == '-z'):    size = sys.argv[8]
 
-track = '[' + haststr + ']'
+track = list(hashstr)
 
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -55,7 +57,8 @@ class listener(StreamListener):
         tweetstr = tweetstr.replace(hashstr, '')
         print('[Checkpoint 05] Speaking question parsed for only Alphanumeric and Space characters:', tweetstr)
         #TODO make RPi speak
-
+	phrase = 'say ' + tweetstr
+	os.system(phrase)
         print('[Checkpoint 06] Connecting to', host, 'on port', port)
         s.connect((host, port))
         print('[Checkpoint 08] Sending question:', tweetstr)
