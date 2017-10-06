@@ -2,10 +2,12 @@
 
 import socket
 import sys
+
+import os
 import wolframalpha
 from serverKeys import wolfappid
 
-#default port, backlog, and size assignment
+# default port, backlog, and size assignment
 host = ''
 port = 50000
 backlog = 5
@@ -13,15 +15,15 @@ size = 1024
 s = None
 
 if len(sys.argv) > 1:
-    if(sys.argv[1] == '-p'):    port = int(sys.argv[2])
-    if(sys.argv[3] == '-p'):    port = int(sys.argv[4])
-    if(sys.argv[5] == '-p'):    port = int(sys.argv[6])
-    if(sys.argv[1] == '-b'): backlog = int(sys.argv[2])
-    if(sys.argv[3] == '-b'): backlog = int(sys.argv[4])
-    if(sys.argv[5] == '-b'): backlog = int(sys.argv[6])
-    if(sys.argv[1] == '-z'):    size = int(sys.argv[2])
-    if(sys.argv[3] == '-z'):    size = int(sys.argv[4])
-    if(sys.argv[5] == '-z'):    size = int(sys.argv[6])
+    if (sys.argv[1] == '-p'):    port = int(sys.argv[2])
+    if (sys.argv[3] == '-p'):    port = int(sys.argv[4])
+    if (sys.argv[5] == '-p'):    port = int(sys.argv[6])
+    if (sys.argv[1] == '-b'): backlog = int(sys.argv[2])
+    if (sys.argv[3] == '-b'): backlog = int(sys.argv[4])
+    if (sys.argv[5] == '-b'): backlog = int(sys.argv[6])
+    if (sys.argv[1] == '-z'):    size = int(sys.argv[2])
+    if (sys.argv[3] == '-z'):    size = int(sys.argv[4])
+    if (sys.argv[5] == '-z'):    size = int(sys.argv[6])
 
 wolfclient = wolframalpha.Client(wolfappid)
 
@@ -49,9 +51,9 @@ while 1:
         res = wolfclient.query(datastr)
         ans = next(res.results).text
         print('[Checkpoint 11] Received answer from Wolframalpha:' + ans)
-        #TODO make RPi speak here
-	phrase = 'say ' + ans
-	os.system(phrase)
+
+        phrase = 'say ' + ans
+        os.system(phrase)
         print('[Checkpoint 12] Speaking answer parsed for only Alphnumeric and Space characters:')
 
         print('[Checkpoint 13] Sending answer:' + ans)
