@@ -12,7 +12,7 @@ backlog = 5
 size = 1024
 s = None
 
-if len(sys.argv):
+if len(sys.argv > 1):
     if(sys.argv[1] == '-p'):    port = int(sys.argv[2])
     if(sys.argv[3] == '-p'):    port = int(sys.argv[4])
     if(sys.argv[5] == '-p'):    port = int(sys.argv[6])

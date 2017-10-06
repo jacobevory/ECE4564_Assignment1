@@ -12,7 +12,7 @@ port = 50000
 size = 1024
 s = None
 
-if len(sys.argv):
+if len(sys.argv > 1):
     if(sys.argv[1] == '-s'):    host = sys.argv[2]
     if(sys.argv[3] == '-s'):    host = sys.argv[4]
     if(sys.argv[5] == '-s'):    host = sys.argv[6]
