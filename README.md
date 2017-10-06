@@ -2,6 +2,8 @@
 
 Raspberry Pi needs to run
 
-sudo pip3 install gTTS
-sudo pip3 install wolframalpha
-sudo pip3 install tweepy
+$sudo pip3 install gTTS
+
+$sudo pip3 install wolframalpha
+
+$sudo pip3 install tweepy
