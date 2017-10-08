@@ -9,11 +9,10 @@ from tweepy.streaming import StreamListener
 import json
 from clientKeys import ckey, csec, atok, asec
 
-host = '192.168.1.1'
+host = '192.168.1.2'
 port = 50000
 hashstr = '#defaultTestECE4564'
 size = 1024
-s = None
 
 if len(sys.argv) > 1:
     if (sys.argv[1] == '-s'):    host = sys.argv[2]
@@ -35,15 +34,6 @@ if len(sys.argv) > 1:
 
 track = [hashstr]
 
-try:
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-except socket.error as message:
-    if s:
-        s.close()
-    print("Unable to open the socket: " + str(message))
-    sys.exit(1)
-
 print('[Checkpoint 03] Listening for Tweets that contain:', hashstr)
 
 
@@ -58,13 +48,20 @@ class listener(StreamListener):
         print('[Checkpoint 05] Speaking question parsed for only Alphanumeric and Space characters:', tweetstr)
         phrase = 'say ' + tweetstr
         os.system(phrase)
-        print('[Checkpoint 06] Connecting to', host, 'on port', port)
-        s.connect((host, port))
-        print('[Checkpoint 08] Sending question:', tweetstr)
-        s.send(tweetstr.encode())
-        recvdata = s.recv(size)
-        s.close()
-        print('[Checkpoint 14] Received answer:', recvdata.decode())
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            print('[Checkpoint 06] Connecting to', host, 'on port', port)
+            s.connect((host, port))
+            print('[Checkpoint 08] Sending question:', tweetstr)
+            s.send(tweetstr.encode())
+            recvdata = s.recv(size)
+            s.close()
+            print('[Checkpoint 14] Received answer:', recvdata.decode())
+        except socket.error as message:
+            if s:
+                s.close()
+            print("Unable to open the socket: " + str(message))
+            sys.exit(1)
         return (True)
 
     def on_error(self, status_code):
