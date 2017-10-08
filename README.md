@@ -8,5 +8,7 @@ $sudo pip3 install wolframalpha
 
 $sudo pip3 install tweepy
 
+$sudo apt-get install mpg123
+
 #TODO:
   filter incoming twiter stream
