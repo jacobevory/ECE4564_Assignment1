@@ -3,13 +3,14 @@
 import socket
 import os
 import sys
+from gtts import gTTS
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import json
 from clientKeys import ckey, csec, atok, asec
 
-host = '192.168.1.2'
+host = '127.0.0.1'
 port = 50000
 hashstr = '#defaultTestECE4564'
 size = 1024
@@ -46,8 +47,10 @@ class listener(StreamListener):
         tweetstr = ''.join(tweet)
         tweetstr = tweetstr.replace(hashstr, '')
         print('[Checkpoint 05] Speaking question parsed for only Alphanumeric and Space characters:', tweetstr)
-        phrase = 'say ' + tweetstr
-        os.system(phrase)
+        phrase = gTTS(text=tweetstr, lang='en-uk')
+        phrase.save('temp.mp3')
+        os.system('omxplayer temp.mp3')
+        os.system('rm temp.mp3')
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             print('[Checkpoint 06] Connecting to', host, 'on port', port)
