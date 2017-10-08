@@ -7,6 +7,7 @@ Requires:
 	gTTS
 	wolframalpha
 	tweepy
+	mpg123
 
 Commands:
 	python3 server.py -p <SERVER_PORT> -b <BACKLOG_SIZE> -z <SOCKET_SIZE>
