@@ -1,0 +1,20 @@
+ECE 4564 Assignment 1
+Team 26
+Jacob Evory:
+Staci Williams: staciw93@vt.edu
+
+Requires:
+	gTTS
+	wolframalpha
+	tweepy
+
+Commands:
+	python3 server.py -p <SERVER_PORT> -b <BACKLOG_SIZE> -z <SOCKET_SIZE>
+	python3 client.py -s <SERVER_IP> -p <SERVER_PORT> -z <SOCKET_SIZE> -t “<HASHTAG>”
+
+Description:
+	This project uses a socket to connect the client Raspberry Pi to the server 
+Raspberry Pi. The client uses the tweepy library to listen for tweets with the specified 
+hashtag, which is then spoken using gTTS and sent to the server RPi. Once the server receives 
+the question, it sends it to the Wolfranalpha server and speaks the answer. The server 
+then sends the answer back to the client.
